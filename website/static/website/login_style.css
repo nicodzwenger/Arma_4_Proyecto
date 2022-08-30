@@ -1,0 +1,6 @@
+section.bg-image{
+    background-image: url('/static/media/login-img.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}

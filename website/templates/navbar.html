@@ -1,0 +1,65 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'index' %}"><img src="{% static 'media/logo-arma4.png' %}" class="img-fluid" alt="logo" width="200px" height="45px"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              JUEGO
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Terreno</a></li>
+              <li><a class="dropdown-item" href="#">Armas</a></li>
+              <li><a class="dropdown-item" href="#">Vehiculos</a></li>
+              <li><a class="dropdown-item" href="#">Campaña</a></li>
+              <li><a class="dropdown-item" href="#">Multijugador</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              MEDIA
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Imagenes</a></li>
+              <li><a class="dropdown-item" href="#">Videos</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Fondos de pantalla</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">NOTICIAS</a>
+          <li class="nav-item">
+            <a class="nav-link" href="#">SOPORTE</a>
+
+        </ul>
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        </li>
+        {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout'}">CERRAR SESIÓN</a>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">CREAR CUENTA</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">INICIAR SESION</a>
+          </li>
+        {% endif %}
+
+
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'buy' %}">COMPRAR</a>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
